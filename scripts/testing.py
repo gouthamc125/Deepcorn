@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 
 # Load the image of the plant
-image = cv2.imread(r'C:\Users\C.GOUTHAM\Desktop\Deepcorn\images\corn\14.jpg')
+image = cv2.imread(r'C:\Users\C.GOUTHAM\Desktop\Deepcorn\images\corn\18.jpg')
 
 # Convert the image to grayscale
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -13,6 +13,9 @@ hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
 # Apply a Gaussian blur to reduce noise
 blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+
+# Apply Canny edge detection
+edges = cv2.Canny(blurred, 50, 150)
 
 # Define the lower and upper bounds for yellow color in HSV
 lower_yellow = np.array([20, 100, 100])
@@ -40,6 +43,9 @@ for contour in contours:
 # Find contours in the thresholded image
 contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
+# Draw the contours on the original image
+cv2.drawContours(image, contours, -1, (0, 255, 0), 2)
+
 # Initialize a counter to keep track of the number of kernels
 kernel_count = 0
 
@@ -65,16 +71,19 @@ def measure_image_dimensions(image_path):
 
 
 # Example usage
-image_path = r'C:\Users\C.GOUTHAM\Desktop\Deepcorn\images\corn\14.jpg'
+image_path = r'C:\Users\C.GOUTHAM\Desktop\Deepcorn\images\corn\18.jpg'
 measure_image_dimensions(image_path)
 
 # Display the number of kernels
 print(f"Number of kernels: {kernel_count}")
 
+# Display the number of kernels
+num_kernels = len(contours)
+print(f"Number of kernels: {num_kernels}")
+
 # Display the image with the bounding rectangles
-cv2.imshow('Plant Seeds', image)
 cv2.drawContours(image, contours, -1, (0, 255, 0), 2)
-cv2.imshow("Corn Image", image)
 cv2.imshow('Yellow Color Image', yellow_image)
+cv2.imshow("Corn Kernels", image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
