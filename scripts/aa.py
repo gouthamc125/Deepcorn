@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 
 # Load the image of the plant
-image = cv2.imread(r'C:\Users\C.GOUTHAM\Desktop\Deepcorn\images\corn\14.jpg')
+image = cv2.imread(r'C:\Users\C.GOUTHAM\Desktop\Deepcorn\images\corn\test1.jpg')
 
 # Convert the image to grayscale
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -65,11 +65,8 @@ def measure_image_dimensions(image_path):
 
 
 # Example usage
-image_path = r'C:\Users\C.GOUTHAM\Desktop\Deepcorn\images\corn\14.jpg'
+image_path = r'C:\Users\C.GOUTHAM\Desktop\Deepcorn\images\corn\test1.jpg'
 measure_image_dimensions(image_path)
-
-# Display the number of kernels
-print(f"Number of kernels: {kernel_count}")
 
 # Display the image with the bounding rectangles
 cv2.imshow('Plant Seeds', image)

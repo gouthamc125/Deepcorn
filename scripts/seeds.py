@@ -1,7 +1,7 @@
 import cv2
 
 # Load the corn image
-image = cv2.imread(r'C:\Users\C.GOUTHAM\Desktop\Deepcorn\single.jpg')
+image = cv2.imread(r'C:\Users\C.GOUTHAM\Desktop\Deepcorn\images\corn\test4.jpg')
 
 # Convert the image to grayscale
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)

@@ -12,5 +12,5 @@ def measure_image_dimensions(image_path):
     print(f"The image dimensions are: {height_cm:.2f} cm x {width_cm:.2f} cm")
 
 # Example usage
-image_path = r'C:\Users\C.GOUTHAM\Desktop\Deepcorn\images\corn\14.jpg'
+image_path = r'C:\Users\C.GOUTHAM\Desktop\Deepcorn\images\corn\test3.jpg'
 measure_image_dimensions(image_path)
