@@ -14,3 +14,6 @@ Finding the corn images by using the application which included the Object Detec
 We have done some of the R&D work on finding out the color detection and the color palette hexadecimal numbers by using python scripts.
 
 And also, We have done counting of kernels from the corn images by using python script. 
+
+# Number of Kernels 
+We have done some of the R&D work on finding out the number of kernels per each corn by using python scripts.
