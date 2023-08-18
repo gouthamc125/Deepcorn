@@ -1,6 +1,26 @@
+from email.mime import image
 import cv2
 import numpy as np
 
+# Crop the image 
+def calculate_corn_length(image_path):
+    # Load the image
+    image = cv2.imread(image_path)
+
+    # Calculate the corn length
+    corn_length = len(image)
+
+    # Remove bottom 10% and top 10% of the image
+    bottom_cutoff = int(corn_length * 0.1)
+    top_cutoff = int(corn_length * 0.9)
+    cropped_image = image[bottom_cutoff:top_cutoff, :]
+
+    # Display the output
+    cv2.imshow("Cropped Image", cropped_image)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+# Yellow Color Kernel
 def find_yellow_kernels(image_path):
 
     #Image path for all parameters
@@ -35,6 +55,7 @@ def find_yellow_kernels(image_path):
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
+# Red Color Kernel
 def find_red_kernels(image_path):
 
     # Load the image
@@ -69,7 +90,7 @@ def find_red_kernels(image_path):
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
-
+# Measure the Length of the Corn
 def measure_image_dimensions(image_path):
     image = cv2.imread(image_path)
     height, width, _ = image.shape
@@ -82,9 +103,10 @@ def measure_image_dimensions(image_path):
     print(f"The image dimensions are: {height_cm:.2f} cm x {width_cm:.2f} cm")
 
 
-image_path = r'C:\Users\C.GOUTHAM\Desktop\Deepcorn\images\corn\17.jpg'
+image_path = r'C:\Users\C.GOUTHAM\Desktop\Deepcorn\images\corn\test3.jpg'
 
 # Find red kernels in the image
+calculate_corn_length(image_path)
 find_yellow_kernels(image_path)
 find_red_kernels(image_path)
 measure_image_dimensions(image_path)
