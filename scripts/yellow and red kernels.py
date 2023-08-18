@@ -32,7 +32,7 @@ def find_yellow_kernels(image):
     cv2.destroyAllWindows()
 
 # Load the image
-image = cv2.imread(r'C:\Users\C.GOUTHAM\Desktop\Deepcorn\images\corn\test5.jpg')
+image = cv2.imread(r'C:\Users\C.GOUTHAM\Desktop\Deepcorn\images\corn\11.jpg')
 
 # Find yellow kernels in the image
 find_yellow_kernels(image)

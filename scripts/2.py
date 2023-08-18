@@ -82,7 +82,7 @@ def measure_image_dimensions(image_path):
     print(f"The image dimensions are: {height_cm:.2f} cm x {width_cm:.2f} cm")
 
 
-image_path = r'C:\Users\C.GOUTHAM\Desktop\Deepcorn\images\corn\18.jpg'
+image_path = r'C:\Users\C.GOUTHAM\Desktop\Deepcorn\images\corn\test4.jpg'
 
 # Find red kernels in the image
 find_yellow_kernels(image_path)
